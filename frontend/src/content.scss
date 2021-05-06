@@ -1,0 +1,23 @@
+.content1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20rem;
+  // background: rgb(47, 85, 10);
+  p {
+    text-transform: uppercase;
+    color: #444;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    margin-top: 7rem;
+  }
+  h1 {
+    font-weight: bold;
+    margin: 1.8rem;
+  }
+  img {
+    margin: 30px;
+  }
+}
