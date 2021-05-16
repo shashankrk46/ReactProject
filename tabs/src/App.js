@@ -27,23 +27,43 @@ const App = () => {
     return <h1>Loading....</h1>;
   }
 
-  const {title, id, duties, dates} = jobs[value];
+  const {title, company, duties, dates} = jobs[value];
   return (
-    <div>
-      <h1>Experience</h1>
-      {jobs.map((item, index) => {
-        return (
-          <button key={item.id} onClick={() => setValue(index)}>
-            {item.company}
-          </button>
-        );
-      })}
-      <h2>{title}</h2>
-      <p>{dates}</p>
-      {duties.map(duty => {
-        return <p>{duty}</p>;
-      })}
-    </div>
+    <section className="section">
+      <div className="title">
+        <h2>Experience</h2>
+        <div className="underline"></div>
+      </div>
+      <div className="jobs-center">
+        <div className="btn-container">
+          {jobs.map((item, index) => {
+            return (
+              <button
+                key={item.id}
+                onClick={() => setValue(index)}
+                className={`job-btn ${index === value && "active-btn"}`}
+              >
+                {item.company}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      <article className="job-info">
+        <h3>{title}</h3>
+        <h4>{company}</h4>
+        <p className="job-date">{dates}</p>
+        {duties.map((duty, index) => {
+          return (
+            <div key={index} className="job-desc">
+              <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
+
+              <p key={index}>{duty}</p>
+            </div>
+          );
+        })}
+      </article>
+    </section>
   );
 };
 
